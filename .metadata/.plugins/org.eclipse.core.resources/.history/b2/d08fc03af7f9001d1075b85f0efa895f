@@ -1,0 +1,8 @@
+package com.web.repository;
+
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface EmployeeRepo extends JpaRepository<T, ID>, ElasticsearchRepository<T, ID> {
+
+}

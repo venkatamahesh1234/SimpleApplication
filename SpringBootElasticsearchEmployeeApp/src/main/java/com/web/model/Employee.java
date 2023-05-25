@@ -1,0 +1,88 @@
+package com.web.model;
+
+//import javax.persistence.Entity;
+//import javax.persistence.GeneratedValue;
+//import javax.persistence.GenerationType;
+//import javax.persistence.Id;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
+//@Entity
+@Document(indexName="employees")
+public class Employee {
+	@Id
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer empNo;
+	@Field(type = FieldType.Text, name = "empName")
+	private String empName;
+	@Field(type = FieldType.Text, name = "empSalary")
+	private double empSalary;
+	@Field(type = FieldType.Text, name = "ta")
+	private double ta;
+	@Field(type = FieldType.Text, name = "da")
+	private double da;
+	@Field(type = FieldType.Text, name = "pf")
+	private double pf;
+	@Field(type = FieldType.Text, name = "grassSalary")
+	private double grassSalary;
+	@Field(type = FieldType.Text, name = "netSalary")
+	private double netSalary;
+	public Integer getEmpNo() {
+		return empNo;
+	}
+	public void setEmpNo(Integer empNo) {
+		this.empNo = empNo;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+	public double getEmpSalary() {
+		return empSalary;
+	}
+	public void setEmpSalary(double empSalary) {
+		this.empSalary = empSalary;
+	}
+	public double getTa() {
+		return ta;
+	}
+	public void setTa(double ta) {
+		this.ta = ta;
+	}
+	public double getDa() {
+		return da;
+	}
+	public void setDa(double da) {
+		this.da = da;
+	}
+	public double getPf() {
+		return pf;
+	}
+	public void setPf(double pf) {
+		this.pf = pf;
+	}
+	public double getGrassSalary() {
+		return grassSalary;
+	}
+	public void setGrassSalary(double grassSalary) {
+		this.grassSalary = grassSalary;
+	}
+	public double getNetSalary() {
+		return netSalary;
+	}
+	public void setNetSalary(double netSalary) {
+		this.netSalary = netSalary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [empNo=" + empNo + ", empName=" + empName + ", empSalary=" + empSalary + ", ta=" + ta + ", da="
+				+ da + ", pf=" + pf + ", grassSalary=" + grassSalary + ", netSalary=" + netSalary + "]";
+	}
+
+	
+}

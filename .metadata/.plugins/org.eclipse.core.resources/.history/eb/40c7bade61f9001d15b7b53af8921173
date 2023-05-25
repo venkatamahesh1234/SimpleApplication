@@ -1,0 +1,19 @@
+package com.web.service;
+
+import java.util.List;
+
+import com.web.model.Bank;
+
+public interface BankService {
+
+	public Bank insertBanks(Bank bank);
+	
+	public Bank updateBanks(Bank bank,Integer sno);
+	
+	public void deleteBank(Integer sno);
+	
+	public List<Bank> getAllBank();
+	
+	public Bank getOneBank(Integer sno);
+	
+}

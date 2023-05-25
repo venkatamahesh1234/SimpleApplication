@@ -1,0 +1,56 @@
+package com.web.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.web.model.Bank;
+import com.web.repository.BankRepo;
+
+@Service
+public class BankServiceImp implements BankService {
+
+	@Autowired
+	private BankRepo brepo;
+	
+	@Override
+	public Bank insertBanks(Bank bank) {
+		double bal=(bank.getBalance()+bank.getDebitAmount())-bank.getWithDrawAmount();
+		bank.setBalance(bal);
+		return brepo.save(bank);
+	}
+
+	@Override
+	public Bank updateBanks(Bank bank, String sno) {
+		Optional<Bank> optional=brepo.findById(sno);
+		Bank b1=optional.get();
+		b1.setSno(sno);
+		b1.setAccountNo(bank.getAccountNo());
+		b1.setAccountName(bank.getAccountName());
+		b1.setDebitAmount(bank.getDebitAmount());
+		b1.setWithDrawAmount(bank.getWithDrawAmount());
+		b1.setLocation(bank.getLocation());
+		double bal=(b1.getBalance()+b1.getDebitAmount())-b1.getWithDrawAmount();
+		b1.setBalance(bal);
+		b1.setDescription(bank.getDescription());
+		return brepo.save(b1);
+	}
+
+	@Override
+	public void deleteBank(String sno) {
+		brepo.deleteById(sno);
+	}
+
+	@Override
+	public List<Bank> getAllBank() {
+		return (List<Bank>)brepo.findAll();
+	}
+
+	@Override
+	public Bank getOneBank(String sno) {
+		return brepo.findById(sno).get();
+	}
+
+}

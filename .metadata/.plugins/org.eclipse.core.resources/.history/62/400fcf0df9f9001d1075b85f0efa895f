@@ -1,0 +1,45 @@
+package com.web.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.web.model.Employee;
+import com.web.repository.EmployeeRepo;
+
+public class EmployeeServiceImp implements EmployeeService{
+
+	@Autowired
+	private EmployeeRepo eRepo;
+	
+	@Override
+	public Iterable<Employee> getAllEmployees() {
+		return eRepo.findAll();
+	}
+
+	@Override
+	public void deleteEmployee(int empNo) {
+		eRepo.deleteById(empNo);
+	}
+
+	@Override
+	public Employee insertEmployees(Employee emp) {
+		double sal=emp.getEmpSalary();
+		double ta=0,da=0,pf=0,grassSal=0,netSal=0;
+		if(sal<30000) {
+			ta=sal*0.09;
+		}
+		return null;
+	}
+
+	@Override
+	public Employee getOneEmployee(int empNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee updateEmployee(Employee emp, int empNo) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

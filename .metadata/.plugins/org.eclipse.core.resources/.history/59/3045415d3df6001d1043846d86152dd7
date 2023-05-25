@@ -1,0 +1,19 @@
+package com.web.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.web.model.UserDtls;
+import com.web.repository.UserRepository;
+
+public class UserServiceImp implements UserService {
+
+	@Autowired
+	private UserRepository userRepo;
+
+	@Override
+	public UserDtls createUSer(UserDtls user) {
+
+		return userRepo.save(user);
+	}
+
+}

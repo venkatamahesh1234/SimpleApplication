@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.persistence.Table"/>
+    <fullyQualifiedTypeName name="org.apache.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="jakarta.persistence.Id"/>
+    <fullyQualifiedTypeName name="java.sql.DriverManager"/>
+    <fullyQualifiedTypeName name="java.sql.Connection"/>
+    <fullyQualifiedTypeName name="java.sql.Statement"/>
+    <fullyQualifiedTypeName name="javax.persistence.Entity"/>
+    <fullyQualifiedTypeName name="javax.persistence.Id"/>
+    <fullyQualifiedTypeName name="javax.persistence.GenerationType"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="org.apache.el.stream.Optional"/>
+    <fullyQualifiedTypeName name="co.elastic.clients.elasticsearch._types.mapping.FieldType"/>
+    <fullyQualifiedTypeName name="org.springframework.ui.Model"/>
+    <fullyQualifiedTypeName name="org.springframework.data.elasticsearch.annotations.FieldType"/>
+    <fullyQualifiedTypeName name="co.elastic.clients.elasticsearch.ElasticsearchClient"/>
+    <fullyQualifiedTypeName name="co.elastic.clients.elasticsearch.core.SearchRequest"/>
+    <fullyQualifiedTypeName name="co.elastic.clients.elasticsearch.core.search.Hit"/>
+    <fullyQualifiedTypeName name="co.elastic.clients.elasticsearch.core.DeleteResponse"/>
+    <fullyQualifiedTypeName name="co.elastic.clients.elasticsearch.core.IndexResponse"/>
+    <fullyQualifiedTypeName name="java.util.Objects"/>
+    <fullyQualifiedTypeName name="co.elastic.clients.elasticsearch.core.GetResponse"/>
+    <fullyQualifiedTypeName name="co.elastic.clients.elasticsearch.core.DeleteRequest"/>
+    <fullyQualifiedTypeName name="co.elastic.clients.elasticsearch.core.SearchResponse"/>
+    <fullyQualifiedTypeName name="org.springframework.http.HttpStatus"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

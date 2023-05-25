@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;SpringBootElasticsearchCustomerApp/src/main/resources/templates/createOrUpdateDocument.html&apos; to &apos;updateCustomerDocument.html&apos;" description="Rename resource &apos;createOrUpdateDocument.html&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/templates/createOrUpdateDocument.html" name="updateCustomerDocument.html" stamp="1684929683479" updateReferences="true"/>
+</session>

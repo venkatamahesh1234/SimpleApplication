@@ -1,0 +1,5 @@
+package com.web.configuration;
+
+public class CustomerConfiguration {
+
+}

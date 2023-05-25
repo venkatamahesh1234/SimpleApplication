@@ -1,0 +1,17 @@
+package com.web.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
+@Document(indexName="products1")
+public class Product {
+
+	@Id
+	private String id;
+	@Field(type=FieldType.Text,name="name")
+	private String name;
+	private String description;
+	private double price;
+}

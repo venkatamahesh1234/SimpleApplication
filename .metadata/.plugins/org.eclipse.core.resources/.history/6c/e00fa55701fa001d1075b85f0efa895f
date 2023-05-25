@@ -1,0 +1,9 @@
+package com.web.repository;
+
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+
+import com.web.model.Employee;
+
+public interface EmployeeRepo extends ElasticsearchRepository<Employee, Integer> {
+
+}

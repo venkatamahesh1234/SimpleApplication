@@ -1,0 +1,91 @@
+package com.web.service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.web.model.Employee;
+import com.web.repository.EmployeeRepo;
+
+@Service
+public class EmployeeServiceImp implements EmployeeService {
+
+	@Autowired
+	private EmployeeRepo erepo;
+
+	@Override
+	public Iterable<Employee> getAllEmployees() {
+		return erepo.findAll();
+	}
+
+	@Override
+	public void deleteEmployee(int empNo) {
+		erepo.deleteById(empNo);
+	}
+
+	@Override
+	public Employee insertEmployees(Employee emp) {
+		double sal = emp.getEmpSalary();
+		double ta = 0, da = 0, pf = 0, grassSal = 0, netSal = 0;
+		if (sal < 30000) {
+			ta += sal * 0.09;
+			da += sal * 0.11;
+			pf += sal * 0.1275;
+		} else if (sal >= 30000 && sal < 60000) {
+			ta += sal * 0.11;
+			da += sal * 0.17;
+			pf += sal * 0.1925;
+		} else if (sal >= 60000) {
+			ta += sal * 0.13;
+			da += sal * 0.19;
+			pf += sal * 0.2325;
+		}
+		emp.setTa(ta);
+		emp.setDa(da);
+		emp.setPf(pf);
+		grassSal = sal + ta + da + pf;
+		emp.setGrassSalary(grassSal);
+		netSal = grassSal - pf;
+		emp.setNetSalary(netSal);
+		return erepo.save(emp);
+	}
+
+	@Override
+	public Employee getOneEmployee(int empNo) {
+		return erepo.findById(empNo).get();
+	}
+
+	@Override
+	public Employee updateEmployee(Employee emp, int empNo) {
+		Optional<Employee> optional = erepo.findById(empNo);
+		Employee e1 = optional.get();
+		e1.setEmpNo(empNo);
+		e1.setEmpName(emp.getEmpName());
+		e1.setEmpSalary(emp.getEmpSalary());
+		double sal = e1.getEmpSalary();
+		double ta = 0, da = 0, pf = 0, grassSal = 0, netSal = 0;
+		if (sal < 30000) {
+			ta += sal * 0.09;
+			da += sal * 0.11;
+			pf += sal * 0.1275;
+		} else if (sal >= 30000 && sal < 60000) {
+			ta += sal * 0.11;
+			da += sal * 0.17;
+			pf += sal * 0.1925;
+		} else if (sal >= 60000) {
+			ta += sal * 0.13;
+			da += sal * 0.19;
+			pf += sal * 0.2325;
+		}
+		e1.setTa(ta);
+		e1.setDa(da);
+		e1.setPf(pf);
+		grassSal = sal + ta + da + pf;
+		e1.setGrassSalary(grassSal);
+		netSal = grassSal - pf;
+		e1.setNetSalary(netSal);
+		return erepo.save(e1);
+	}
+
+}

@@ -1,0 +1,4 @@
+server.port=2025
+
+spring.data.elasticsearch.cluster-name=bankService
+spring.data.elasticsearch.cluster-node=localhost:9200

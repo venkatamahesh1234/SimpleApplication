@@ -1,0 +1,27 @@
+package com.web.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.web.model.UserDtls;
+import com.web.repository.UserRepository;
+
+@Service
+public class UserServiceImp implements UserService {
+
+	@Autowired
+	private UserRepository userRepo;
+
+	@Override
+	public UserDtls createUser(UserDtls user) {
+
+		return userRepo.save(user);
+	}
+
+	@Override
+	public boolean checkEmail(String email) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

@@ -1,0 +1,35 @@
+package com.web.model;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+//import org.springframework.data.annotation.Id;
+
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
+@Entity
+@Document(indexName="employees")
+public class Employee {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer emoNo;
+	@Field(type = FieldType.Text, name = "empName")
+	private String empName;
+	@Field(type = FieldType.Text, name = "empSalary")
+	private double empSalary;
+	@Field(type = FieldType.Text, name = "ta")
+	private double ta;
+	@Field(type = FieldType.Text, name = "da")
+	private double da;
+	@Field(type = FieldType.Text, name = "pf")
+	private double pf;
+	@Field(type = FieldType.Text, name = "grassSalary")
+	private double grassSalary;
+	@Field(type = FieldType.Text, name = "netSalary")
+	private double netSalary;
+
+	
+}

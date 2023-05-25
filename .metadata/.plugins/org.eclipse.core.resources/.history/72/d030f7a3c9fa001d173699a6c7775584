@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<title>Customer Store</title>
+	</head>
+	<body class="br-image" style="background-image: url(); height: 100vh;">
+		<div class="container my-5 ">
+    <h1 class="text-center">Spring Boot + Elastic Search + CRUD Application
+        <a href="/" class="btn btn-danger text-right">Go Home</a>
+    </h1>
+
+    <a th:href="@{/showNewProductForm}" class="btn btn-primary m-3"> Add Product </a>
+
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="productDocument : ${listProductDocuments}">
+            <td th:text="${productDocument.id}"></td>
+            <td th:text="${productDocument.name}"></td>
+            <td th:text="${productDocument.description}"></td>
+            <td th:text="${productDocument.price}"></td>
+            <td> <a th:href="@{/showFormForUpdate/{id}(id=${productDocument.id})}" class="btn btn-success">Update</a>
+                <a th:href="@{/deleteProduct/{id}(id=${productDocument.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+	</body>
+</html>

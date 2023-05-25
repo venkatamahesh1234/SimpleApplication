@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+ th:replace="base::layout(~{::section})">
+	<head>
+		<title>Insert Tilte Here </title>
+		
+	</head>
+	<body>		
+		<section>
+			<div class="container mt-5"></div>
+		</section>
+		
+
+	</body>
+</html>

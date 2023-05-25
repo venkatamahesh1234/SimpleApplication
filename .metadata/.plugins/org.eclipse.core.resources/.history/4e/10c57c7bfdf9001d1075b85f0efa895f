@@ -1,0 +1,11 @@
+package com.web.repository;
+
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+//import org.yaml.snakeyaml.events.Event.ID;
+
+import com.web.model.Employee;
+
+public interface EmployeeRepo extends JpaRepository<Employee, Integer>, ElasticsearchRepository<Employee, Integer> {
+
+}

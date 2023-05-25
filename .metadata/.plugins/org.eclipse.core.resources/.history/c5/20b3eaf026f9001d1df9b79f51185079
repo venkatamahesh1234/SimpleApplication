@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Insert Title Here
+		</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	</head>
+	<body>
+		
+		<div class="container my-5">
+			<h1 class="text-center">Product Store<br>(Spring MVC Elasticsearch Application)<br/></h1>
+			<a th:href="@{/showNewProductForm}" class="btn btn-primary m-3">Add Product</a>
+			<a href="/" class="btn btn-danger text-right">Go Home</a>
+			
+			<table id="products" border="1" class="table table-striped table-responsive-md">
+				<thead class="table-dark">
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Description</th>
+						<th>Quantity</th>
+						<th>Price</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="productDocument:${listProductDocuments}">
+						<td th:text="${productDocument.id}"></td>
+						<td th:text="${productDocument.name}"></td>
+						<td th:text="${productDocument.description}"></td>
+						<td th:text="${productDocument.quantity}"></td>
+						<td th:text="${productDocument.price}"></td>
+						<td><a th:href="@{/showFormForUpdate/{id}(id=${productDocument.id})}" class="btn btn-success">Update</a>
+                			<a th:href="@{/deleteProduct/{id}(id=${productDocument.id})}" class="btn btn-danger">Delete</a>
+            			</td>
+					</tr>
+				</tbody>
+				
+			</table>
+		</div>
+		
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	</body>
+</html>

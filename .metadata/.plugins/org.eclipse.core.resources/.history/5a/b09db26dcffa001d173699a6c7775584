@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<title>Customer Store</title>
+	</head>
+	<body class="br-image" style="background-image: url(); height: 100vh;">
+		<div class="container my-5 ">
+    <h1 class="text-center">Spring Boot + Elastic Search + CRUD Application
+        <a href="/" class="btn btn-danger text-right">Go Home</a>
+    </h1>
+
+    <a th:href="@{/showNewCustomerForm}" class="btn btn-primary m-3"> Add Customer </a>
+
+    <table border="1" class="table table-striped table-responsive-md">
+        <thead>
+        <tr>
+            <th>Customer Id</th>
+            <th>Customer Name</th>
+            <th>Product Name</th>
+            <th>Mobile Number</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customerDocument : ${listCustomerDocuments}">
+            <td th:text="${customerDocument.customerId}"></td>
+            <td th:text="${customerDocument.customerName}"></td>
+            <td th:text="${customerDocument.productName}"></td>
+            <td context="${customerDocument.mobileNumber}"></td>
+            <td th:text="${customerDocument.price}"></td>
+            <td> <a th:href="@{/showFormForUpdate/{customerId}(customerId=${customerDocument.id})}" class="btn btn-success">Update</a>
+                <a th:href="@{/deleteCustomer/{customerId}(customerId=${customerDocument.id})}" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+	</body>
+</html>

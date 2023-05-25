@@ -1,0 +1,22 @@
+package com.web.entity;
+
+import java.util.List;
+
+import com.web.entity.VaccinationCenter;
+
+public class RequiredResponse {
+
+	private VaccinationCenter center;
+	private List<Citizen> citizen;
+	public RequiredResponse() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public RequiredResponse(VaccinationCenter center, List<Citizen> citizen) {
+		super();
+		this.center = center;
+		this.citizen = citizen;
+	}
+	
+
+}

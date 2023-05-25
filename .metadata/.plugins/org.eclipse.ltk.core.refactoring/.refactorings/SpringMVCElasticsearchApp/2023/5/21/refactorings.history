@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.web.model.Product.java&apos; to &apos;Bank.java&apos;&#x0D;&#x0A;- Original project: &apos;SpringMVCElasticsearchApp&apos;&#x0D;&#x0A;- Original element: &apos;com.web.model.Product.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.web.model.Bank.java&apos;" description="Rename compilation unit &apos;Product.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.web.model{Product.java" name="Bank.java" references="false" stamp="1684836817904" version="1.0"/>
+</session>

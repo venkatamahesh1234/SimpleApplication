@@ -1,0 +1,57 @@
+package com.web.service;
+
+import java.util.List;
+
+import java.util.Optional;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.web.model.Bank;
+import com.web.repository.BankRepo;
+
+@Service
+public class BankServiceImp implements BankService {
+
+	@Autowired
+	private BankRepo bRepo;
+	
+	@Override
+	public Bank insertBanks(Bank bank) {
+		double bal=(bank.getBalance()+bank.getDebitAmount())-bank.getWithDrawAmount();
+		bank.setBalance(bal);
+		return bRepo.save(bank);
+	}
+
+	@Override
+	public Bank updateBanks(Bank bank, Integer sno) {
+		Optional<Bank> optional=bRepo.findById(sno);
+		Bank b1=optional.get();
+		b1.setSno(sno);
+		b1.setAccountName(bank.getAccountName());
+		b1.setAccountNo(bank.getAccountNo());
+		b1.setDebitAmount(bank.getDebitAmount());
+		b1.setWithDrawAmount(bank.getWithDrawAmount());
+		double bal=(b1.getBalance()+b1.getDebitAmount())-b1.getWithDrawAmount();
+		b1.setBalance(bal);
+		return b1;
+	}
+
+	@Override
+	public void deleteBank(Integer sno) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Bank> getAllBank() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Bank getOneBank(Integer sno) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

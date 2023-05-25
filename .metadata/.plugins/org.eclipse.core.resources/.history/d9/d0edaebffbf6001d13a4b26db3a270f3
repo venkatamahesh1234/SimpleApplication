@@ -1,0 +1,4 @@
+<body>
+	<h1>User After Login : Home Page</h1>
+	<a href="/logout">Logout</a>
+</body>

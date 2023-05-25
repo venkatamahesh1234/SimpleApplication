@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<title>Customer Store</title>
+	</head>
+	<body>
+		<div class="container my-5">
+    <h1 class="text-center">Spring Boot + Elastic Search + CRUD Application
+        <a href="/" class="btn btn-danger text-right">Go Home</a>
+    </h1>
+    <hr>
+    <h2>Save Customer</h2>
+
+    <form action="#" th:action="@{/saveCustomer}" th:object="${customer}" method="POST">
+        <input type="text" th:field="*{customerId}" placeholder="Customer Id" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{customerName}" placeholder="Customer Name" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{productName}" placeholder="Product Name" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{mobileNumber}" placeholder="Mobile Number" class="form-control mb-4 col-4">
+
+        <input type="text" th:field="*{price}" placeholder="Product Price" class="form-control mb-4 col-4">
+
+        <button type="submit" class="btn btn-info col-2"> Save Customer</button>
+    </form>
+
+    <hr>
+
+    <a th:href="@{/}"> Back to Customer List</a>
+</div>
+	</body>
+</html>

@@ -1,0 +1,4 @@
+server.port=2025
+
+#spring.data.elasticsearch.cluster-name=productService
+#spring.data.elasticsearch.cluster-nodes=localhost:9200

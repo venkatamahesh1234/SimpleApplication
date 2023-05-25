@@ -1,0 +1,22 @@
+package com.web.model;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Field;
+import org.springframework.data.elasticsearch.annotations.FieldType;
+
+@Document(indexName="customers")
+public class Customer {
+	
+	@Id
+	@Field(type=FieldType.Keyword,name="custid")
+	private String customerId;
+	@Field(type=FieldType.Text,name="custName")
+	private String customerName;
+	@Field(type=FieldType.Text,name="prodName")
+	private String productName;
+	@Field(type=FieldType.Long,name="mobileNo")
+	private long mobileNumber;
+	@Field(type=FieldType.Double,name="price")
+	private double price;
+}
